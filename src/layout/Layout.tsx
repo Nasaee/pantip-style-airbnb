@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import HeaderMobile from '../components/HeaderMobile';
 import Rooms from '../components/Rooms';
 import SideBarMenu from '@/components/SideBarMenu';
+import Footer from '@/components/Footer';
 
 const Layout = () => {
   const topHeaderRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ const Layout = () => {
       </div>
       <main
         style={{ marginTop: `${headerHeight}px` }}
-        className='flex min-h-screen mx-auto'
+        className='flex min-h-screen mx-auto pb-20'
       >
         <aside className='hidden md:block pt-5  bg-white'>
           <SideBarMenu />
@@ -38,7 +39,7 @@ const Layout = () => {
           <Outlet />
         </div>
       </main>
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 };

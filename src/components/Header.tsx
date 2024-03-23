@@ -5,9 +5,25 @@ import { PiUsersThreeLight } from 'react-icons/pi';
 import { GoSearch } from 'react-icons/go';
 import { useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
+import Login from './Login';
+import Register from './Register';
 
 const Header = () => {
   const [isSearchFocus, setIsSearchFocus] = useState(false);
+
+  const handleLoginClick = () => {
+    const loginModal = document.getElementById('login-modal');
+    if (loginModal) {
+      (loginModal as HTMLDialogElement).showModal();
+    }
+  };
+
+  const handleRegisterClick = () => {
+    const registerModal = document.getElementById('register-modal');
+    if (registerModal) {
+      (registerModal as HTMLDialogElement).showModal();
+    }
+  };
 
   return (
     <header className='hidden md:flex justify-between gap-3 pt-4 pb-6'>
@@ -77,12 +93,26 @@ const Header = () => {
             className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-transparent'
           >
             <ul className='p-4 shadow-custom1 menu dropdown-content z-[1] rounded-box w-52 flex flex-col gap-5 bg-white'>
-              <button className='hover:text-violet-600'>สมัครสมาชิก</button>
-              <button className='hover:text-violet-600'>เข้าสู่ระบบ</button>
+              <button
+                type='button'
+                className='hover:text-violet-600'
+                onClick={handleRegisterClick}
+              >
+                สมัครสมาชิก
+              </button>
+              <button
+                type='button'
+                className='hover:text-violet-600'
+                onClick={handleLoginClick}
+              >
+                เข้าสู่ระบบ
+              </button>
             </ul>
           </ul>
         </div>
       </div>
+      <Login />
+      <Register />
     </header>
   );
 };
