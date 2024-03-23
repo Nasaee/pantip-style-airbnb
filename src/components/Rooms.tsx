@@ -1,4 +1,3 @@
-import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -11,24 +10,21 @@ import { Link } from 'react-router-dom';
 
 const Rooms = () => {
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center max-w-7xl mx-auto'>
       <Carousel
         opts={{
           align: 'center',
         }}
-        className='w-full max-w-sm'
+        className='w-full max-w-md md:max-w-lg lg:max-w-6xl'
       >
         <CarouselContent>
           {rooms.map((room) => {
             const { id, title, path, icon: Icon } = room;
             return (
-              <CarouselItem
-                key={id}
-                className='md:basis-1/2 lg:basis-1/3 flex-grow'
-              >
+              <CarouselItem key={id} className='basis-1/3 lg:basis-1/6'>
                 <Link
                   to={path}
-                  className='flex flex-col items-center p-4  border '
+                  className='flex flex-col gap-2 items-center p-4 hover:border-b border-slate-400 transition-all'
                 >
                   <Icon />
                   <p>{title}</p>
@@ -44,10 +40,3 @@ const Rooms = () => {
   );
 };
 export default Rooms;
-<Carousel>
-  <CarouselContent className='-ml-4'>
-    <CarouselItem className='pl-4'>...</CarouselItem>
-    <CarouselItem className='pl-4'>...</CarouselItem>
-    <CarouselItem className='pl-4'>...</CarouselItem>
-  </CarouselContent>
-</Carousel>;

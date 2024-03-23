@@ -79,16 +79,3 @@ module.exports = {
   },
   plugins: [require('tailwindcss-animate'), require('daisyui')],
 };
-// content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-//   theme: {
-//     extend: {
-//       boxShadow: {
-//         custom1: '0px 2px 8px 0px rgba(99, 99, 99, 0.3)',
-//         custom2: '0px 2px 8px 0px rgba(99, 99, 99, 0.4)',
-//       },
-//     },
-//   },
-//   daisyui: {
-//     themes: ['light'],
-//   },
-//   plugins: [require('daisyui')],

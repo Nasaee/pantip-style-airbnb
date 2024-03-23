@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { useEffect, useRef, useState } from 'react';
 import HeaderMobile from '../components/HeaderMobile';
 import Rooms from '../components/Rooms';
+import SideBarMenu from '@/components/SideBarMenu';
 
 const Layout = () => {
   const topHeaderRef = useRef<HTMLDivElement>(null);
@@ -15,8 +16,11 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className='font-thai text-gray-500'>
-      <div ref={topHeaderRef} className='fixed top-0 left-0 right-0 bg-white'>
+    <div className='font-thai text-gray-500 bg-white z-50'>
+      <div
+        ref={topHeaderRef}
+        className='fixed top-0 left-0 right-0 bg-white z-1000'
+      >
         <div className='border-2 border-slate-200'>
           <Header />
           <HeaderMobile />
@@ -25,10 +29,12 @@ const Layout = () => {
       </div>
       <main
         style={{ marginTop: `${headerHeight}px` }}
-        className='flex min-h-screen'
+        className='flex min-h-screen mx-auto'
       >
-        <aside className='w-16'>sidebar menu</aside>
-        <div className='flex-1'>
+        <aside className='hidden md:block pt-5  bg-white'>
+          <SideBarMenu />
+        </aside>
+        <div className='flex-1 border-l-2 border-slate-300'>
           <Outlet />
         </div>
       </main>

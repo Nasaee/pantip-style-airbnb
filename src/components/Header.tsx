@@ -1,7 +1,5 @@
 import { IoMdMenu } from 'react-icons/io';
-import { useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import { toggleSidebar } from '../store/ui-controls/uiControlsSlice';
 import { BsChatDots } from 'react-icons/bs';
 import { PiUsersThreeLight } from 'react-icons/pi';
 import { GoSearch } from 'react-icons/go';
@@ -10,22 +8,12 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
   const [isSearchFocus, setIsSearchFocus] = useState(false);
-  const dispatch = useDispatch();
 
-  const toggleSidebarMenu = () => {
-    dispatch(toggleSidebar());
-  };
   return (
     <header className='hidden md:flex justify-between gap-3 pt-4 pb-6'>
-      <div className='flex items-center gap-3 pr-3'>
-        <button
-          className=' grid place-items-center w-16'
-          onClick={toggleSidebarMenu}
-        >
-          <IoMdMenu className='text-[#7048e8] text-3xl' />
-        </button>
-        <Link to='/' className=''>
-          <img src='/logo.png' alt='logo' className='h-8' />
+      <div className='flex items-center  pl-5 pr-3 self-start'>
+        <Link to='/' className='font-bold text-violet-600 text-xl'>
+          <p>Pantip</p>
         </Link>
       </div>
       <div className='flex-1 flex flex-col items-center gap-4'>
@@ -86,11 +74,11 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+            className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-transparent'
           >
-            <ul className='p-4 shadow-custom1 menu dropdown-content z-[1] bg-base-100 rounded-box w-52 flex flex-col gap-5'>
-              <button>สมัครสมาชิก</button>
-              <button>เข้าสู่ระบบ</button>
+            <ul className='p-4 shadow-custom1 menu dropdown-content z-[1] rounded-box w-52 flex flex-col gap-5 bg-white'>
+              <button className='hover:text-violet-600'>สมัครสมาชิก</button>
+              <button className='hover:text-violet-600'>เข้าสู่ระบบ</button>
             </ul>
           </ul>
         </div>
