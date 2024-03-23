@@ -1,7 +1,5 @@
 import { GoSearch } from 'react-icons/go';
 import { IoMenuOutline } from 'react-icons/io5';
-import Login from './Login';
-import Register from './Register';
 
 const HeaderMobile = () => {
   const handleLoginClick = () => {
