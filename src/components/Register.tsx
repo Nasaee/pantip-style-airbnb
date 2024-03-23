@@ -1,14 +1,14 @@
 const Register = () => {
-  const handleRegisterClick = () => {
-    const registerModal = document.getElementById('register-modal');
-    const loginModal = document.getElementById('login-modal');
-    if (registerModal) {
-      (registerModal as HTMLDialogElement).classList.add('hidden');
-    }
-    if (loginModal) {
-      (loginModal as HTMLDialogElement).showModal();
-    }
-  };
+  // const handleRegisterClick = () => {
+  //   const registerModal = document.getElementById('register-modal');
+  //   const loginModal = document.getElementById('login-modal');
+  //   if (registerModal) {
+  //     (registerModal as HTMLDialogElement).classList.add('hidden');
+  //   }
+  //   if (loginModal) {
+  //     (loginModal as HTMLDialogElement).showModal();
+  //   }
+  // };
   return (
     <div>
       <dialog id='register-modal' className='modal'>
