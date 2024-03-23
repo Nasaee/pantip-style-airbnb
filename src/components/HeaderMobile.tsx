@@ -14,10 +14,26 @@ const HeaderMobile = () => {
           className=' w-full rounded-full pl-12 pr-4 py-3 bg-white shadow-custom1'
         />
       </div>
-      <div className='grid place-items-center'>
+      {/* <div className='grid place-items-center'>
         <button>
           <IoMenuOutline className='text-3xl hover:text-violet-600' />
         </button>
+      </div> */}
+      <div className='dropdown dropdown-end my-auto'>
+        <div tabIndex={0} role='button' className='m-1'>
+          <IoMenuOutline className='text-3xl hover:text-violet-600' />
+        </div>
+        <ul
+          tabIndex={0}
+          className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+        >
+          <li>
+            <a>Item 1</a>
+          </li>
+          <li>
+            <a>Item 2</a>
+          </li>
+        </ul>
       </div>
     </div>
   );

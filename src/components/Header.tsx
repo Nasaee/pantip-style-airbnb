@@ -80,14 +80,14 @@ const Header = () => {
       </div>
       <div className='pr-3'>
         <div className='dropdown dropdown-end'>
-          <div
+          <button
             tabIndex={0}
             role='button'
             className='btn m-1 text-3xl border border-slate-300 py-2 px-3 rounded-full text-gray-500 bg-white hover:bg-white'
           >
             <IoMdMenu className='hidden lg:inline-block' />
             <FaUserCircle />
-          </div>
+          </button>
           <ul
             tabIndex={0}
             className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-transparent'

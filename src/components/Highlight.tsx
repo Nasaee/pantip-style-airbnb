@@ -4,7 +4,7 @@ const Highlight = () => {
   return (
     <div className='px-2 md:px-4 lg:px-6'>
       <h2 className='font-bold text-2xl mb-4'>Highlight</h2>
-      <div className='grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] lg:grid-cols-4 gap-6'>
+      <div className='grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]  gap-6'>
         {highlights.map((highlight) => {
           const { id, image, description } = highlight;
           return (
