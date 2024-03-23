@@ -3,7 +3,7 @@ import { TfiAnnouncement } from 'react-icons/tfi';
 
 const Announce = () => {
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4' id='announce'>
       <h2 className='flex flex-col items-center gap-2 font-bold text-xl text-gray-600'>
         <TfiAnnouncement className='text-red-500 text-2xl' />
         <span className='uppercase'>Announce</span>

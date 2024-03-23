@@ -3,13 +3,38 @@ import { Link, NavLink } from 'react-router-dom';
 import { BsChatDots } from 'react-icons/bs';
 import { PiUsersThreeLight } from 'react-icons/pi';
 import { GoSearch } from 'react-icons/go';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import Login from './Login';
-import Register from './Register';
 
 const Header = () => {
   const [isSearchFocus, setIsSearchFocus] = useState(false);
+  const [hiddenTopNav, setHiddenTopNav] = useState(false);
+
+  useEffect(() => {
+    const announceSection = document.getElementById('announce');
+
+    const intersectionObserverFn = function (
+      entries: IntersectionObserverEntry[]
+    ) {
+      const [entry] = entries;
+
+      if (!entry.isIntersecting) {
+        setHiddenTopNav(true);
+      } else {
+        setHiddenTopNav(false);
+      }
+    };
+
+    const headerObserver = new IntersectionObserver(intersectionObserverFn, {
+      root: null,
+      threshold: 0,
+      rootMargin: `0px`,
+    });
+
+    if (announceSection) {
+      headerObserver.observe(announceSection);
+    }
+  }, []);
 
   const handleLoginClick = () => {
     const loginModal = document.getElementById('login-modal');
@@ -33,7 +58,7 @@ const Header = () => {
         </Link>
       </div>
       <div className='flex-1 flex flex-col items-center gap-4'>
-        <nav className='flex gap-4'>
+        <nav id='top-nav' className={hiddenTopNav ? 'hidden' : 'flex gap-4'}>
           <NavLink
             to='/post-question'
             className='flex items-center gap-2 py-3 px-4 rounded-full hover:bg-gray-200 hover:text-black transition-all'
@@ -93,26 +118,28 @@ const Header = () => {
             className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 bg-transparent'
           >
             <ul className='p-4 shadow-custom1 menu dropdown-content z-[1] rounded-box w-52 flex flex-col gap-5 bg-white'>
-              <button
-                type='button'
-                className='hover:text-violet-600'
-                onClick={handleRegisterClick}
-              >
-                สมัครสมาชิก
-              </button>
-              <button
-                type='button'
-                className='hover:text-violet-600'
-                onClick={handleLoginClick}
-              >
-                เข้าสู่ระบบ
-              </button>
+              <li>
+                <button
+                  type='button'
+                  className='hover:text-violet-600'
+                  onClick={handleRegisterClick}
+                >
+                  สมัครสมาชิก
+                </button>
+              </li>
+              <li>
+                <button
+                  type='button'
+                  className='hover:text-violet-600'
+                  onClick={handleLoginClick}
+                >
+                  เข้าสู่ระบบ
+                </button>
+              </li>
             </ul>
           </ul>
         </div>
       </div>
-      <Login />
-      <Register />
     </header>
   );
 };

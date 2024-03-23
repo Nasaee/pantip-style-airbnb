@@ -5,6 +5,8 @@ import HeaderMobile from '../components/HeaderMobile';
 import Rooms from '../components/Rooms';
 import SideBarMenu from '@/components/SideBarMenu';
 import Footer from '@/components/Footer';
+import Login from '@/components/Login';
+import Register from '@/components/Register';
 
 const Layout = () => {
   const topHeaderRef = useRef<HTMLDivElement>(null);
@@ -38,6 +40,8 @@ const Layout = () => {
         <div className='flex-1 border-l-2 border-slate-300'>
           <Outlet />
         </div>
+        <Login />
+        <Register />
       </main>
       <Footer />
     </div>

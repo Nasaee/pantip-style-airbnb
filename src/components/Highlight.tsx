@@ -2,7 +2,7 @@ import { highlights } from '@/data';
 
 const Highlight = () => {
   return (
-    <div className='px-2 md:px-4 lg:px-6'>
+    <div className='px-2 md:px-4 lg:px-6 ' id='highlight'>
       <h2 className='font-bold text-2xl mb-4'>Highlight</h2>
       <div className='grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]  gap-6'>
         {highlights.map((highlight) => {
